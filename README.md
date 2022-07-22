@@ -8,9 +8,9 @@
 
 ## Descripción
 
-Cambia es una aplicación que acercará a las mujeres a la transformación digital. Nuestro objetivo es crear una comunidad de mujeres fuerte que logre romper los tabús sociales y culturales sobre temas de negocios y finanzas.
+Cambia es una aplicación que acercará a las mujeres a la transformación digital. Nuestro objetivo es crear una comunidad para ellas, que les permita generar capital social y modelos a seguir en temas financieros y de negocios.
 
-A través de CambiaBot las mujeres serán parte de foros, videos, podcast y mensajería con otras mujeres para crear una comunidad positiva que comparta su experiencia en temas financieros y de negocios.
+A través de CambiaBot las mujeres serán parte de foros, videos, podcast y mensajería para crear una comunidad positiva que comparta su experiencia en temas financieros y de negocios, y conseguir romper la barrera de los tabús sociales.
 
 ## Aplicación
 
