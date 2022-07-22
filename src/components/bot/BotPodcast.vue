@@ -3,11 +3,11 @@
         <h1>Crea tu primer empresa</h1>
         <div class="podcast-user">
             <img alt="" class="user-avatar"
-                src="https://static.overlay-tech.com/assets/8760d872-2d27-4d9d-b542-7bda0c3fff52.png" />
+                src="https://randomuser.me/api/portraits/women/11.jpg" />
             <div class="podcast-controls">
                 <div class="podcast-info">
                     <p class="user-text">
-                        Alma Ríos <strong class="user-text-emphasis-1">Querétaro</strong>
+                        Victoria Ortiz <strong class="user-text-emphasis-1">Guadalajara</strong>
                     </p>
                 </div>
                 <div class="podcast-player">
