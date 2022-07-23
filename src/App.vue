@@ -21,9 +21,12 @@ const currentComponent = ref('Inicio')
 
 onMounted(() => {
   setTimeout(() => {
-    // currentComponent.value = 'Login'
-    currentComponent.value = 'CambiaBot'
-  }, 1000)
+    currentComponent.value = 'Login'
+    // currentComponent.value = 'CambiaBot'
+    setTimeout(() => {
+      currentComponent.value = 'CambiaBot'
+    }, 3000)
+  }, 5000)
 })
 
 provide('app/@selectComponent', name => {

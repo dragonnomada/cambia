@@ -123,29 +123,29 @@ onMounted(async () => {
             <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
             <span class="icon"><i class="fa-solid fa-book"></i></span>`)
 
-    await sleep(1200)
+    await sleep(2000)
 
-    await insertMessage("Comecemos escuchando este podcast que estoy seguro que te podría gustar")
+    await insertMessage("Comecemos escuchando esta historia que estoy seguro que te podría gustar")
 
     await insertComponent(h(BotPodcast))
 
-    await sleep(1200)
+    await sleep(20000)
 
     await insertInlineMessage("Buscar más contenido como este")
 
     await sleep(2000)
 
-    await insertMessage("¿Te ha gustado el podcast?")
+    await insertMessage("¿Te ha gustado esta historia?")
 
     await insertComponent(h(BotAnswers, {
         questions: ['Sí', 'No mucho']
     }))
 
-    await sleep(2000)
+    await sleep(3000)
 
     children.value = []
     
-    await insertMessage("Vamos a buscar nuevo contenido :D")
+    await insertMessage(`Vamos a buscar nuevo contenido <span class="icon"><i class="fa-solid fa-face-laugh-beam"></i></span>`)
 
     await insertComponent(h(BotTags, {
         tags: ['Emprender', 'Negocios', 'Ventas']

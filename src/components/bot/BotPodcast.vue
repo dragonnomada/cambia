@@ -1,6 +1,6 @@
 <template>
     <div class="bot-podcast">
-        <h1>Crea tu primer empresa</h1>
+        <h1>Conoce la Historia de Esperanza</h1>
         <div class="podcast-user">
             <img alt="" class="user-avatar"
                 src="https://randomuser.me/api/portraits/women/11.jpg" />
@@ -12,8 +12,8 @@
                 </div>
                 <div class="podcast-player">
                     <audio controls>
-                        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        <!-- <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg"> -->
+                        <source src="../../assets/2_historia.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
