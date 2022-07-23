@@ -12,7 +12,7 @@
 * [Documento de Presentación](./docs/presentacion.md)
 * [Metología](./docs/metodologia.md)
 * [Prototipo](./docs/mockup.md)
-* [Pitch 1](./docs/pitch_1.md)
+* [Pitch 1](./docs/pitch_1.md.error)
 * [Pitch 2](./docs/pitch_2.md)
 
 > Prototipo Funcional en Azure
