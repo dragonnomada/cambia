@@ -3,17 +3,23 @@
         <CambiaDock />
         <div class="bot-feed">
             <BotHello />
+
+            <div v-for="child in children" :key="child.name">
+                <component :is="child"></component>
+            </div>
+
+            <!--
             <BotMessage>
                 ¿Estás lista para aprender nuevas habilidades el día de hoy?
                 <span class="icon"><i class="fa-solid fa-user-astronaut"></i></span>
                 <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
                 <span class="icon"><i class="fa-solid fa-book"></i></span>
             </BotMessage>
-            <BotVideo/>
+            <BotVideo />
             <BotMessage>
                 ¿Ya has escuchado las <strong>pláticas</strong> del día?
             </BotMessage>
-            <BotPodcast/>
+            <BotPodcast />
             <BotInline>
                 Buscar más contenido como este
             </BotInline>
@@ -45,7 +51,8 @@
             <BotMessage>
                 Hola, ¿en qué <strong>temas</strong> estás más interesada?
             </BotMessage>
-            <BotAnswers :questions="['Habilidades Digitales', 'Emprender', 'Mi primer negocio', 'Finanzas básicas']" />
+            <BotAnswers :questions="['Habilidades Digitales', 'Emprender', 'Mi primer negocio', 'Finanzas básicas']" /> 
+            -->
         </div>
         <div class="logo-citibanamex-contenedor">
             <LogoCitiBanamex />
@@ -67,6 +74,96 @@ import BotHello from './bot/BotHello.vue';
 import BotSuggestions from './bot/BotSuggestions.vue';
 import BotPodcast from './bot/BotPodcast.vue';
 import BotVideo from './bot/BotVideo.vue';
+import { h, onMounted, ref } from 'vue';
+
+const children = ref([])
+
+async function sleep(milliseconds = 600) {
+    return await new Promise(resolve => {
+        setTimeout(resolve, milliseconds)
+    })
+}
+
+async function insertComponent(component) {
+    children.value.push(h(BotMessage, {}, "..."))
+    await sleep(900)
+    children.value.pop()
+    await sleep(200)
+    children.value.push(component)
+}
+
+function createMessage(content) {
+    return h(BotMessage, {}, h("div", {
+        innerHTML: content
+    }))
+}
+
+async function insertMessage(content) {
+    await insertComponent(createMessage(content))
+}
+
+// <BotMessage>
+//    ¿Tienes algún tema en mente?
+// </BotMessage>
+// <BotTags :tags="['Emprender', 'Negocios', 'Ventas']" />
+
+function createInlineMessage(content) {
+    return h(BotInline, {}, h("div", {
+        innerHTML: content
+    }))
+}
+
+async function insertInlineMessage(content) {
+    await insertComponent(createInlineMessage(content))
+}
+
+onMounted(async () => {
+    await insertMessage(`¿Estás lista para aprender nuevas habilidades el día de hoy?
+            <span class="icon"><i class="fa-solid fa-user-astronaut"></i></span>
+            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span class="icon"><i class="fa-solid fa-book"></i></span>`)
+
+    await sleep(1200)
+
+    await insertMessage("Comecemos escuchando este podcast que estoy seguro que te podría gustar")
+
+    await insertComponent(h(BotPodcast))
+
+    await sleep(1200)
+
+    await insertInlineMessage("Buscar más contenido como este")
+
+    await sleep(2000)
+
+    await insertMessage("¿Te ha gustado el podcast?")
+
+    await insertComponent(h(BotAnswers, {
+        questions: ['Sí', 'No mucho']
+    }))
+
+    await sleep(2000)
+
+    children.value = []
+    
+    await insertMessage("Vamos a buscar nuevo contenido :D")
+
+    await insertComponent(h(BotTags, {
+        tags: ['Emprender', 'Negocios', 'Ventas']
+    }))
+
+    await sleep(2000)
+
+    await insertComponent(h(BotVideo))
+
+    await sleep(1200)
+
+    await insertComponent(h(BotSuggestions, {
+        title: "Ver otras historias del día",
+        options: ['Habilidades Digitales', 'Emprender', 'Mi primer negocio', 'Finanzas básicas']
+    }))
+
+    
+})
 </script>
 
 <style scoped>
@@ -77,6 +174,9 @@ import BotVideo from './bot/BotVideo.vue';
 }
 
 .bot-feed {
+    display: flex;
+    flex-direction: column;
+
     padding: 24px 24px 96px 24px;
     overflow: auto;
 }

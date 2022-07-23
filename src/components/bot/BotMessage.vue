@@ -1,9 +1,11 @@
 <template>
-    <div class="bot-message">
-        <div class="flex-wrapper-one">
-            <p class="message-text">
-                <slot></slot>
-            </p>
+    <div class="bot-message-container">
+        <div class="bot-message">
+            <div class="flex-wrapper-one">
+                <p class="message-text">
+                    <slot></slot>
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -12,11 +14,30 @@
 </script>
 
 <style lang="scss" scoped>
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bot-message-container {
+    display: flex;
+}
+
 .bot-message {
     padding-bottom: 12px;
+    animation: fadeIn 600ms;
 }
 
 .flex-wrapper-one {
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+
     background-color: rgba(241, 241, 241, 1);
     border-radius: 18px;
     box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.35);

@@ -1,10 +1,20 @@
 <template>
-    <div class="button-login">
+    <div class="button-login" @click="iniciarSesion()">
         <p class="button-login-text">Iniciar Sesión</p>
         <!-- <img alt="" class="button-login-text"
                         src="https://static.overlay-tech.com/assets/969b44c2-0c5c-4313-b66a-5221ac306b24.png" /> -->
     </div>
 </template>
+
+<script setup>
+import { inject } from 'vue';
+
+const selectComponent = inject("app/@selectComponent")
+
+function iniciarSesion() {
+    selectComponent('CambiaBot')
+}
+</script>
 
 <style scoped>
 .button-login {

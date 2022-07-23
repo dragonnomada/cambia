@@ -1,14 +1,34 @@
 <template>
-  <!-- <Inicio/> -->
-  <!-- <Login /> -->
-  <CambiaBot/>
+  <template v-if="currentComponent === 'Inicio'">
+    <Inicio />
+  </template>
+  <template v-else-if="currentComponent === 'Login'">
+    <Login />
+  </template>
+  <template v-else>
+    <CambiaBot />
+  </template>
+
 </template>
 
 <script setup>
-import { provide, ref } from 'vue';
+import { onMounted, provide, ref } from 'vue';
 import Inicio from './components/Inicio.vue';
 import Login from './components/Login.vue';
 import CambiaBot from './components/CambiaBot.vue';
+
+const currentComponent = ref('Inicio')
+
+onMounted(() => {
+  setTimeout(() => {
+    // currentComponent.value = 'Login'
+    currentComponent.value = 'CambiaBot'
+  }, 1000)
+})
+
+provide('app/@selectComponent', name => {
+  currentComponent.value = name
+})
 
 const fieldSelected = ref('common')
 
