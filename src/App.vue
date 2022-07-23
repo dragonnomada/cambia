@@ -23,10 +23,10 @@ onMounted(() => {
   setTimeout(() => {
     currentComponent.value = 'Login'
     // currentComponent.value = 'CambiaBot'
-    setTimeout(() => {
-      currentComponent.value = 'CambiaBot'
-    }, 3000)
-  }, 5000)
+    // setTimeout(() => {
+    //   currentComponent.value = 'CambiaBot'
+    // }, 3000)
+  }, 1000)
 })
 
 provide('app/@selectComponent', name => {
