@@ -1,0 +1,7 @@
+![f1](./screenshots/f1.png)
+![f2](./screenshots/f2.png)
+![f3](./screenshots/f3.png)
+![f4](./screenshots/f4.png)
+![f5](./screenshots/f5.png)
+![f6](./screenshots/f6.png)
+![f7](./screenshots/f7.png)
