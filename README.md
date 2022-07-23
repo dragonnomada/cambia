@@ -9,7 +9,7 @@
 ## Recursos generados durante el Hackathon
 
 * [Encuesta In-House](./docs/encuesta.md)
-* [Documento de Presentación](./docs/presentacion.md.md)
+* [Documento de Presentación](./docs/presentacion.md)
 * [Metología](./docs/metodologia.md)
 * [Prototipo](./docs/mockup.md)
 * [Pitch 1](./docs/pitch_1.md)
