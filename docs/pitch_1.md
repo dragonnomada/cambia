@@ -7,8 +7,3 @@
 ![p7](./screenshots/p7.png)
 ![p8](./screenshots/p8.png)
 ![p9](./screenshots/p9.png)
-![p10](./screenshots/p10.png)
-![p11](./screenshots/p11.png)
-![p12](./screenshots/p12.png)
-![p13](./screenshots/p13.png)
-![p14](./screenshots/p14.png)
